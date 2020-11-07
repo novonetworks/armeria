@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.linecorp.armeria</groupId>
+  <artifactId>armeria-spring-boot2-actuator-starter</artifactId>
+  <version>1.2.1-RC2-SNAPSHOT</version>
+  <name>Armeria (armeria-spring-boot2-actuator-starter)</name>
+  <description>Asynchronous HTTP/2 RPC/REST client/server library built on top of Java 8, Netty, Thrift and gRPC (armeria-spring-boot2-actuator-starter)</description>
+  <url>https://armeria.dev/</url>
+  <inceptionYear>2015</inceptionYear>
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>https://www.apache.org/license/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>LINE Corporation</name>
+      <email>dl_oss_dev@linecorp.com</email>
+      <url>https://engineering.linecorp.com/en/</url>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:https://github.com/line/armeria.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/line/armeria.git</developerConnection>
+    <url>https://github.com/line/armeria</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>com.linecorp.armeria</groupId>
+      <artifactId>armeria</artifactId>
+      <version>1.2.1-RC2-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>3.0.2</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.30</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.linecorp.armeria</groupId>
+      <artifactId>armeria-spring-boot2-actuator-autoconfigure</artifactId>
+      <version>1.2.1-RC2-SNAPSHOT</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>

@@ -59,18 +59,26 @@ configure(projectsWithFlags('publish')) {
     publishing {
         repositories {
             maven {
-                if (project.hasProperty('publishUrl')) {
+                /*if (project.hasProperty('publishUrl')) {
                     url project.findProperty('publishUrl')
+                } else if (project.hasProperty('publishToRootLocal')) {
+                    url "file:${rootDir}/maven-repo"
                 } else if (isReleaseVersion) {
                     url publishUrlForRelease
                 } else {
                     url publishUrlForSnapshot
-                }
+                }*/
 
-                credentials {
-                    username = project.findProperty(publishUsernameProperty)
-                    password = project.findProperty(publishPasswordProperty)
-                }
+                url "file:${rootDir}/maven-repo"
+
+                println(project.findProperty('publishToRootLocal'))
+
+                /*if (project.findProperty('publishToRootLocal') != true) {
+                    credentials {
+                        username = project.findProperty(publishUsernameProperty)
+                        password = project.findProperty(publishPasswordProperty)
+                    }
+                }*/
             }
         }
     }

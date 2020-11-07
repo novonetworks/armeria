@@ -136,3 +136,5 @@ typings/
 
 # SDKMAN rc file
 .sdkmanrc
+local.properties
+!maven-repo/**/*.jar

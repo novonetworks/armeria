@@ -106,6 +106,12 @@ final class ArmeriaClientHttpRequest extends AbstractClientHttpRequest {
         return uri;
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> T getNativeRequest() {
+        return (T) this;
+    }
+
     @Override
     public DataBufferFactory bufferFactory() {
         return factoryWrapper.delegate();

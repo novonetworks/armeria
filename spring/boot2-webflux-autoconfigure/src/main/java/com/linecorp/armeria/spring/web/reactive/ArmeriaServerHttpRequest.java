@@ -27,7 +27,6 @@ import javax.net.ssl.SSLSession;
 
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpCookie;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.AbstractServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.SslInfo;
@@ -38,6 +37,7 @@ import com.google.common.base.MoreObjects;
 
 import com.linecorp.armeria.common.HttpData;
 import com.linecorp.armeria.common.HttpHeaderNames;
+import com.linecorp.armeria.common.HttpHeaders;
 import com.linecorp.armeria.common.HttpRequest;
 import com.linecorp.armeria.server.ServiceRequestContext;
 
@@ -76,8 +76,8 @@ final class ArmeriaServerHttpRequest extends AbstractServerHttpRequest {
         return URI.create(scheme + "://" + authority + req.path());
     }
 
-    private static HttpHeaders fromArmeriaHttpHeaders(com.linecorp.armeria.common.HttpHeaders httpHeaders) {
-        final HttpHeaders newHttpHeaders = new HttpHeaders();
+    private static MultiValueMap<String, String> fromArmeriaHttpHeaders(HttpHeaders httpHeaders) {
+        final MultiValueMap<String, String> newHttpHeaders = new LinkedMultiValueMap<>();
         httpHeaders.forEach(entry -> newHttpHeaders.add(entry.getKey().toString(), entry.getValue()));
         return newHttpHeaders;
     }
